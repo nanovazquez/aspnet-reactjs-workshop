@@ -2,16 +2,17 @@
 
 Code for the ASP.NET + ReactJS workshop. It contains the following exercises:
 
-
 ### Exercise 1: Hello React!
 
 In this exercise, you start with a `Hello World` like applicationa and you end up with a fully functional React application with code separated into components and on-the-fly ES6 code compilation using Babel.
 
-In the next exercise you will learn how to create a component to add new comments and also how to retrieve the data from the server.
+However, you'll notice that this app has the following pending challenges:
 
 * You cannot add new comments.
 * The data is hardcoded in the client.
 * The JS and CSS files are defined one by one in the Index/Layout page.
+
+In the next exercise, you will learn how to create a component to add new comments and also how to retrieve the data from the server.
 
 ### Exercise 2: Server-side communication
 
