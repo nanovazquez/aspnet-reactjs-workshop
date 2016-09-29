@@ -27,19 +27,19 @@ In this exercise, you start with a `Hello World` like applicationa and you end u
 
   > **Note:** In React, everything is a component. And every component can have one or more components.
 
-1. Let's start from the bottom: copy the content of the **exercise-1\assets\Comment.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Take a moment to analyze the code. Notice the following:
+1. Let's start from the bottom: copy the **exercise-1\assets\Comment.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Take a moment to analyze the code. Notice the following:
 
   1. The code is using the [ES6](http://es6-features.org/) syntax and we can use it because of the React.NET on-the-fly ES6 compilation via [babel](https://babeljs.io/)
   2. The `render()` function is returning something similar to HTML markup. That's [JSX](https://facebook.github.io/react/docs/displaying-data.html) and is what React uses to define UIs, via JS code.
   3. The information is stored in the `this.props` property. We will see how this work in the next step.
 
-1. Now, copy the content of the **exercise-1\assets\CommentList.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Notice that this component has a similar structure, with the following differences:
+1. Now, copy the **exercise-1\assets\CommentList.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Notice that this component has a similar structure, with the following differences:
 
   1. It dynamically generates several `<Comment/>` components based on the `this.props.data` array.
   1. Each component receives their properties like they were HTML attributes.
   1. Those components are rendered under the `<div className="commentList"></div>` element, by simply doing `{commentNodes}` under that element.
 
-1. It's time to add the last component by copying the content of the **exercise-1\assets\CommentBox.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Like before, this component is composed by another comment. 
+1. It's time to add the last component by copying the **exercise-1\assets\CommentBox.jsx** file inside the **ReactMessenger\wwwroot\js\app** folder. Like before, this component is composed by another comment. 
 
   Take a minute to analyze the `ReactDOM.render()` function. Notice that the hardcoded comments are sent via props, like before. Nothing has changed compared to the `<HelloWorld/>` component, except that we use another component :)
 
