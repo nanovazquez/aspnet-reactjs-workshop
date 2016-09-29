@@ -57,7 +57,7 @@ In this exercise, you start with a `Hello World` like applicationa and you end u
 
 ### Next steps
 
-However, you will that this app has the following pending challenges:
+You will notice that the app you've created has the following pending challenges:
 
 * You cannot add new comments.
 * The comments are hardcoded in the client.

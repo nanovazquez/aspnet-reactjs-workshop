@@ -96,4 +96,7 @@
     color: white;
     float: right;
     border-top-right-radius: 4px;
+    max-width: 95%;
+    text-overflow: ellipsis;
+    white-space: normal;
   }
