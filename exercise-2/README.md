@@ -59,24 +59,24 @@ In this exercise, you build the server-side code to manage the list of comments 
 
 1. Finally, make sure that the model is going to be serialized properly by adding these lines in the **Startup.cs** file, just below the `services.AddReact()` line inside the `ConfigureServices` method.
 
-```
-// This method gets called by the runtime. Use this method to add services to the container.
-public void ConfigureServices(IServiceCollection services)
-{
-    // Add react services
-    services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-    services.AddReact();
+  ```
+  // This method gets called by the runtime. Use this method to add services to the container.
+  public void ConfigureServices(IServiceCollection services)
+  {
+      // Add react services
+      services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+      services.AddReact();
 
-    // Add framework services.
-    services.AddMvc()
-        .AddJsonOptions(options =>
-        {
-            options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-        });
+      // Add framework services.
+      services.AddMvc()
+          .AddJsonOptions(options =>
+          {
+              options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+          });
 
-    ...
-}
-```
+      ...
+  }
+  ```
 
 1. Now we are ready to update the client. Replace the content of the **ReactMessenger\wwwroot\js\app\CommentBox.jsx** file with the content of the **exercise-2\assets\CommentBox.jsx**, or simply delete and add the new file. Notice the changes in the file, in detail:
 
