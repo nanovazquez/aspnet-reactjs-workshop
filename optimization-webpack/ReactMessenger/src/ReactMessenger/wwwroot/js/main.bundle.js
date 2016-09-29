@@ -21451,6 +21451,10 @@
 
 	var _CommentForm2 = _interopRequireDefault(_CommentForm);
 
+	var _comments = __webpack_require__(176);
+
+	var _comments2 = _interopRequireDefault(_comments);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CommentBox = _react2.default.createClass({
@@ -21637,6 +21641,360 @@
 	});
 
 	exports.default = CommentForm;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(177);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(180)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./comments.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./comments.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(178)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".commentBox {\r\n  width: 500px;\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.commentList {\r\n  flex: 1;\r\n}\r\n\r\n.commentForm {\r\n  display: flex;\r\n  flex: none;\r\n  border: 1px solid rgba(0, 0, 0, .10);\r\n}\r\n\r\n  .commentForm .inputText {\r\n    border: none;\r\n    padding: 10px 12px;\r\n    flex: 1;\r\n  }\r\n\r\n  .commentForm .actions {\r\n    display: flex;\r\n    width: 220px;\r\n    height: 100%;\r\n    align-items: center;\r\n    background: url(" + __webpack_require__(179) + ") no-repeat;\r\n  }\r\n\r\n  .commentForm .inputValue {\r\n    border: none;\r\n    background-color: transparent;\r\n    padding: 10px 12px;\r\n    color: #0084ff;\r\n    font-size: 12.6px;\r\n    font-weight: bold;\r\n    width: 80px;\r\n    cursor: pointer;\r\n  }\r\n\r\n.comment {\r\n  display: block;\r\n  width: 100%;\r\n  float: left;\r\n  margin-bottom: 25px;\r\n}\r\n\r\n  .commentAuthor {\r\n    color: rgba(0, 0, 0, .40);\r\n    font-size: 12px;\r\n    font-weight: normal;\r\n    line-height: 1.1;\r\n    margin-bottom: 1px;\r\n    padding-left: 45px;\r\n  }\r\n\r\n  .commentImage {\r\n    display: inline-block;\r\n    float: left;\r\n    align-items: center;\r\n    background-color: rgba(0, 0, 0, .05);\r\n    border-radius: 50%;\r\n    display: flex;\r\n    justify-content: center;\r\n    overflow: hidden;\r\n    max-height: 32px;\r\n    max-width: 32px;\r\n    margin-right: 5px;\r\n  }\r\n\r\n    .commentImage img {\r\n      width: 32px;\r\n      height: 32px;\r\n    }\r\n\r\n  .commentText {\r\n    display: inline-block;\r\n    float: left;\r\n    background-color: #f1f0f0;\r\n    color: rgba(0, 0, 0, 1);\r\n    margin: 1px 0;\r\n    padding: 6px 12px;\r\n    border-radius: 1.3em;\r\n    font-size: 14px;\r\n  }\r\n\r\n  .comment.me .commentImage,\r\n  .comment.me .commentAuthor {\r\n    display: none;\r\n  }\r\n\r\n  .comment.me .commentText{\r\n    background-color: #0077e5;\r\n    color: white;\r\n    float: right;\r\n    border-top-right-radius: 4px;\r\n  }", ""]);
+
+	// exports
+
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 179 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/png;base64,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"
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
 
 /***/ }
 /******/ ]);

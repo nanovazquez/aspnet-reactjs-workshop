@@ -2,6 +2,8 @@
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 
+import styles from '../../css/comments.css';
+
 const CommentBox = React.createClass({
   loadCommentsFromServer: function () {
     const xhr = new XMLHttpRequest();
