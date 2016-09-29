@@ -12,7 +12,7 @@ These are the main changes we did:
 
 Also, notice that there are yet more improvements to do, like:
 
-* Break down the **comments.css* into components, and use [CSS Modules](https://github.com/css-modules/css-modules) for local and global scoping.
+* Break down the **comments.css** into components, and use [CSS Modules](https://github.com/css-modules/css-modules) for local and global scoping.
 * Add the ability to regenerate the bundle after building the code (POST Build task).
 * Add the ability to regenerate the bundle **while coding** ([hot module replacement](https://github.com/nanovazquez/aspnet-reactjs-workshop), or live reloading).
 * Separate vendor code from our code in different bundles ([code splitting](https://webpack.github.io/docs/code-splitting.html)).
