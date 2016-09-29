@@ -1,51 +1,99 @@
-﻿html, body, .body-content, #content {
-  width: 100%;
+﻿.commentBox {
+  width: 500px;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  display: block;
-  float: left;
+  display: flex;
+  flex-direction: column;
 }
 
-body {
-  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.28;
-  overflow: auto;
-  text-rendering: optimizeLegibility;
+.commentList {
+  flex: 1;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding: 15px;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
+.commentForm {
+  display: flex;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, .10);
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
-
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
-    width: 100%;
-}
-
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none
+  .commentForm .inputText {
+    border: none;
+    padding: 10px 12px;
+    flex: 1;
   }
+
+  .commentForm .actions {
+    display: flex;
+    width: 220px;
+    height: 100%;
+    align-items: center;
+    background: url('../images/actions.png') no-repeat;
+  }
+
+  .commentForm .inputValue {
+    border: none;
+    background-color: transparent;
+    padding: 10px 12px;
+    color: #0084ff;
+    font-size: 12.6px;
+    font-weight: bold;
+    width: 80px;
+    cursor: pointer;
+  }
+
+.comment {
+  display: block;
+  width: 100%;
+  float: left;
+  margin-bottom: 25px;
 }
+
+  .commentAuthor {
+    color: rgba(0, 0, 0, .40);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.1;
+    margin-bottom: 1px;
+    padding-left: 45px;
+  }
+
+  .commentImage {
+    display: inline-block;
+    float: left;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 32px;
+    max-width: 32px;
+    margin-right: 5px;
+  }
+
+    .commentImage img {
+      width: 32px;
+      height: 32px;
+    }
+
+  .commentText {
+    display: inline-block;
+    float: left;
+    background-color: #f1f0f0;
+    color: rgba(0, 0, 0, 1);
+    margin: 1px 0;
+    padding: 6px 12px;
+    border-radius: 1.3em;
+    font-size: 14px;
+  }
+
+  .comment.me .commentImage,
+  .comment.me .commentAuthor {
+    display: none;
+  }
+
+  .comment.me .commentText{
+    background-color: #0077e5;
+    color: white;
+    float: right;
+    border-top-right-radius: 4px;
+  }
